@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="/static/css/style2.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>PTSD KnowledgeBase</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="./" >
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home</a>
+                    </li>
+
+                    <li>
+                        <a href="./article">
+                            <i class="glyphicon glyphicon-book"></i>
+                            Articles
+                        </a>
+                    </li>
+
+                    <li>   
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Browse
+                        </a>
+                        <ul class="collapse list-unstyled in" id="pageSubmenu">
+                            <li><a href="./general">PTSD General</a></li>
+                            <li><a href="./neuro">PTSD Neurobiology</a></li>
+                            <li><a href="./genes">PTSD Genes</a></li>
+                            <li><a href="./metabolites">PTSD Metabolites</a></li>
+                            <li><a href="./miRNAs">PTSD miRNAs</a></li>
+                            <li><a href="./miRNAs">PTSD Biomarkers</a></li>
+                        </ul>
+                        
+                    </li>
+
+                    <li>
+                        <a href="./Data">
+                            <i class="glyphicon glyphicon glyphicon-leaf"></i>
+                            PTSD Public Datasets
+                        </a>
+                        </li>
+
+                    <li>
+                            <a href="./QA">
+                                <i class="glyphicon glyphicon-question-sign"></i>
+                                PTSD FAQ
+                            </a>
+                        </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>   
+                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-th"></i>
+                            External Links
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                            <li><a href="https://www.nimh.nih.gov/health/statistics/index.shtml">NIMH</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Posttraumatic_stress_disorder">PTSD Wikipedia</a></li>
+                            <li><a href="https://psychiatryonline.org/">PsychiatryOnline</a></li>
+                        </ul>
+                        
+                    </li>
+                    
+
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                        <form class="navbar-form navbar-left" action="./search" style ="background-color:grey">
+                            {% csrf_token %}
+                            {{ form }}
+
+                            <div class="checkbox">
+                                    <p> Article Type</p>
+                                    <label><input type="checkbox" name="jtype" value = "Journal Article" checked> Journal Article</label>
+                                    <label><input type="checkbox" name="jtype" value = "Review" checked> Review </label>
+                                </div>
+                            <br> <br>
+                            <div class="input-group">
+                              <input type="text" class="form-control" name ="txt" placeholder="FKBP5">
+                              <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                  <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content" style="width:100%">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                                <span>Toggle Sidebar</span>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                                <li><a href="#">Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+                {% block content %}
+
+
+                {% endblock %}
+    
+
+
+                <hr>
+                <footer class="container-fluid text-center">
+                
+                    <div class="footer-copyright py-3 text-center">
+                            &copy; 2016<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>
+                          <a href="http://daiglelab.org/">Daigle Lab</a> -- <a href = "http://liangqunlu.github.io/liangqun.github.io/">Liangqun Lu </a>
+                    </div>
+
+
+                    <script>
+                        var d = new Date();
+                        document.getElementById("demo").innerHTML = d.getFullYear();
+                        </script>
+
+
+                </footer>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,89 @@
+{% extends "./base.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+
+{% block content %}
+
+<h2 align="center"> Word Sense Disambiguation </h2>
+    <p> Word sense disambiguation (WSD) is the problem to identify which sense of a word is used in a sentence. In standard format, the problem is written below.</p> 
+
+<p>ENGLISH WORD SENSE DISAMBIGUATION</p>
+<p>INSTANCE: English text x from English alphabet, a word y appearing in x</p>
+<p>QUESTION: which meaning of y is used in x</p>
+
+<hr>
+
+<h2 align="center"> WSD Approaches -- RNN-LSTM Model </h2>
+<p> WSD is the fundamental but one of the most challenging tasks in Natural Language Processing (NLP), for the reasons of data sparseness and complex inherent language lexicons [1]. The approaches to WSD include supervised approaches and knowledge-based approaches. The current recurrent neural networks (RNNs) demonstrates suitable for feature extraction and solve all-words lexical disambiguation [2]. These and other sources will be used to solve WSD problem successfully.  </p>
+
+<hr>
+
+<h2 align="center"> Datasets for LSTM Model Training </h2>
+    
+<p > In total, there are 4 datasets applied in the model. The 2 annotated datasets SemCor and OMSTI were used to generate sense embeddings. The unannotated Gigaword data were used to generate language model. The pre-organized synsets from WordNet were used as dictionary and provided the final correct word sense. </p> 
+<p>SemCor (Miller et al., 1994). SemCor is a manually sense-annotated corpus divided in 352 documents for a total of 226,040 sense annotations. </p>  
+<p>OMSTI (Taghipour and Ng, 2015a). OMSTI (One Million Sense-Tagged Instances) is a large corpus annotated with senses from the WordNet 3.0 inventory. </p>  
+<p>English Gigaword (https://catalog.ldc.upenn.edu/LDC2003T05), a corpus of 1.75 B words.</p>  
+<p>WordNet 3.1 (https://wordnet.princeton.edu/) : a large lexical database of English in which words are sets of cognitive synonyms (synsets).</p>  
+    
+<hr>
+
+<h2 align="center"> Word Sense Prediction Examples </h2>
+<p> The input are a sentence and a word appearing in the sentence, the output are the correct word sense, similar words and all referred senses for the word </p>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    	
+    
+    <label for="input_sent" >Input Sentence: </label>
+    <input id="input_sent" type="text" name="input_sent" value = "I went to the bank to play Frisbee.">
+    <label for="input_word" >Input Word: </label>
+    <input id="input_word" type="text" name="input_word" value = "bank">    
+    <input type="submit" value="Submit">
+
+    </form>
+    
+<br>
+<br>
+<p> The input sentence is :</p>
+<p style = "color:red;font-size:18px;">{{ input_txt|safe}}</p>
+<br>
+
+<p> The word sense and lemma:</p>
+<p style = "color:blue;font-size:18px;">{{ output_txt|safe}} </p>
+<br>
+
+<p> All reference senses:</p>
+<p style = "color:green;font-size:18px;">{{ true_seq|safe}} </p>
+<br>
+
+<!-- 
+<form method="POST" action="" >
+    {% csrf_token %}
+    
+    
+    <label for="input_sent" >Input Sentence: </label>
+    <input id="input_sent" type="text" name="input_sent">
+    <input type="submit" value="OK">
+
+    </form>
+    
+<br><br>
+<p> The Input Sentence is : </p>
+<p style = "color:red;font-size:18px;">{{ input_txt|safe}}</p>
+<br>
+
+<p> The sense generation is :</p>
+<p style = "color:blue;font-size:18px;">{{ output_txt|safe}} </p>
+<br>
+
+<p> The reference senses are :</p>
+<p style = "color:green;font-size:18px;">{{ true_seq|safe}} </p>
+<br>
+-->
+
+{% endblock %}
+
+
+

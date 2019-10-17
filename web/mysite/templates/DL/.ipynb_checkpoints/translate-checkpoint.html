@@ -1,0 +1,46 @@
+{% extends "./base.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+
+{% block content %}
+  
+<h2> English to Chinese Translation </h2>
+<p> I followed the <a href = "https://machinelearningmastery.com/develop-neural-machine-translation-system-keras/">tutorial </a> online which implements a Neural Machine Translation System in Keras from Scratch from English to German while I built a translation from English to Chinese.</p>
+<p> The dataset I used to train the model is downloaded from <a href = "http://www.manythings.org/anki/">ManyThings/anki </a> </p>
+<hr>
+<h2> DL Model </h2>
+<p> There are 19777 Chinese -- English pairs from <a href = "http://www.manythings.org/anki/cmn-eng.zip">the anki download </a> </p>
+<p> In total, 10,000 pairs were used to train the model, among which, 90% as training and 10% as validation</p>
+<p> Parameters epochs=30, batch_size=64 were used in model training</p>
+
+<hr>
+
+<h2> Text translation example</h2>
+<p> The input is an English sentence, and the output is translated Chinese and rference Chinese</p>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    	
+    {{ form }}
+
+    <input type="submit" value="Example">
+
+    </form>
+
+<p> The input English is :</p>
+<p style = "color:red">{{ input_txt|safe}}</p>
+<br>
+
+<p> The translated Chinese is :</p>
+<p style = "color:blue">{{ output_txt|safe}} </p>
+<br>
+
+<p> The reference Chinese is :</p>
+<p style = "color:green">{{ true_seq|safe}} </p>
+<br>
+
+{% endblock %}
+
+
+

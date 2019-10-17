@@ -1,0 +1,43 @@
+{% extends "./base.html" %}
+{% block title %} {{ title|safe}} {% endblock %}
+
+{% block content %}
+  
+<h2> Language Model </h2>
+<p> Language model is to calculate the probability of a sentence consisting of words.</p>
+<p> I followed the <a href = "https://machinelearningmastery.com/how-to-develop-a-word-level-neural-language-model-in-keras/">tutorial text generation online </a> and trained a model to generate words </p>
+<p> The dataset I used is from the <a href = "https://en.wikipedia.org/wiki/A_Song_of_Ice_and_Fire">series of books A Song of Ice and Fire I -- V </a> which the TV show Game of Thrones was filmed on</p>
+
+<hr>
+<h2> Neural Model For Text Generation</h2>
+<p> In total, I used 100,000 to train a generation model, in which 50 previous words are used to predict the following one word.</p>
+<hr>
+
+<h2> Text generation example</h2>
+<p> The input is 20 words and the output is the generated 50 words</p>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    	
+    {{ form }}
+
+    <input type="submit" value="Example">
+
+    </form>
+
+<p> The seed text is :</p>
+<p style = "color:red">{{ seed_txt|safe}}</p>
+<br>
+
+<p> The generated text is :</p>
+<p style = "color:blue">{{ output_txt|safe}} </p>
+<br>
+
+<p> The text in the book is :</p>
+<p style = "color:green">{{ true_seq|safe}} </p>
+<br>
+
+{% endblock %}
+
+
+

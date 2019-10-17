@@ -1,0 +1,58 @@
+{% extends "./base.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+
+{% block content %}
+  
+<h2> Deep Learning Models </h2>
+<p> Deep Learning Networks: <a href = "https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-explained-3fb6f2367464"> DL Neural Networks </a>, and it has wide <a href = "https://en.wikipedia.org/wiki/Deep_learning#Applications"> applications </a>. </p>
+<p> Deep Learning model zoo: <a href = "https://modelzoo.co/"> Model Zoo</a> </p>
+<p> <a href = "http://deeplearning.net/datasets/"> Deep Learning Datasets </a> and <a href = "https://skymind.ai/wiki/open-datasets"> Open Deep Learning Datasets </a>  </p>
+
+<p>Practical AI notebook</p>
+<ul>
+  <li> <a href = "https://github.com/Hvass-Labs/TensorFlow-Tutorials"> Hvass-Labs </a> </li>
+  <li> <a href = "https://github.com/GokuMohandas/practicalAI">PracticalAI </a> </li>
+  <li> <a href = "https://github.com/Sentdex"> Sentdex </a> </li>
+  <li> <a href = "https://github.com/Yangxulei/ML-DL-Tutorial"> Deep Learning Courses </a> </li>  
+</ul>
+
+
+<h2> Generative Adervasial Networks </h2>
+<p> Deep Learning <a href = "https://github.com/hindupuravinash/the-gan-zoo"> GAN Zoo</a> </p>
+<p>Practical GAN notebook</p>
+<ul>
+      <li> <a href = "https://github.com/nashory/gans-awesome-applications"> gans-awesome-applications </a> </li>
+
+</ul>
+
+
+<h2> Sentence Generation example on Twitter</h2>
+<p> The input is a sentence while the output is the generated sentence from the model</p>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    	
+    {{ form }}
+
+    <input type="submit" value="Example">
+
+    </form>
+
+<p> The question is :</p>
+<p style = "color:red">{{ input_txt|safe}}</p>
+<br>
+
+<p> The generated response is :</p>
+<p style = "color:blue">{{ output_txt|safe}} </p>
+<br>
+
+<p> The reference response is :</p>
+<p style = "color:green">{{ true_seq|safe}} </p>
+<br>
+
+{% endblock %}
+
+
+

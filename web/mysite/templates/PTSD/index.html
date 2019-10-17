@@ -1,0 +1,201 @@
+
+{% extends "./base_sidebar.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+{% block content %}
+
+
+<div class="row"> 
+        <div class="col-md-6">
+    
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">Welcome to the PTSD Knowledgebase!</div>
+                </div>
+                <div class="panel-body">
+                <p> Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event — either experiencing it or witnessing it. Symptoms may include flashbacks, nightmares and severe anxiety, as well as uncontrollable thoughts about the event.</p>
+
+                <p>Most people who go through traumatic events may have temporary difficulty adjusting and coping, but with time and good self-care, they usually get better. If the symptoms get worse, last for months or even years, and interfere with your day-to-day functioning, you may have PTSD.</p>
+
+                <p> Getting effective treatment after PTSD symptoms develop can be critical to reduce symptoms and improve function.</p>
+                    <p>This database is organized to provide information about the biological studies at PTSD, including neurobiology, genes, miRNAs and metabolites.</p>
+                    <div class="spacer"></div>
+                    <table class="table">
+                        <thead>
+                            <th>All Articles</th>
+                            <th></th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td><strong>Genes</strong></td>
+                            <td> xx </td>
+                            </tr>
+                            <tr>
+                            <td><strong>Variants</strong></td>
+                            <td>xx</td>
+                            </tr>
+                            <tr>
+                            <td><strong>Interpretations</strong></td>
+                            <td>xx</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr />
+    
+            </div> </div>
+    
+            <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title"> Recent PTSD Reviews</div>
+                    </div>
+                    <div class="panel-body">
+                        <p> {{data | safe}} </p>
+                           
+                    </div>       
+                </div>
+    
+            <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">Research Topic Extraction </div>
+                    </div>
+                    <div class="panel-body">
+                        <p> </p>
+                            
+                    </div>       
+                </div>    
+    
+        </div>
+            
+        <div class="col-md-6">
+    
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">PTSD Charactersitics</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#">fear</a></div>
+                        <div class="col-md-3"><a href="#">stress</a></div>
+                        <div class="col-md-3"><a href="#">flashback</a></div>
+                        <div class="col-md-3"><a href="#"></a>hypervigilance</div>
+                    </div>
+                    <br>
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#">anxiety</a></div>
+                        <div class="col-md-3"><a href="#">exaggerated startle</a></div>
+                        <div class="col-md-3"><a href="#">cognitive impairments</a></div>
+                        <div class="col-md-3"><a href="#">intrusive memories of the trauma</a></div>
+                    </div>
+                    <p class="text-right"><a href="./general">See all...</a></p>
+                </div>
+            </div>
+    
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">Neurobiology</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#" >HPA</a></div>
+                        <div class="col-md-3"><a href="#" >amygdala</a></div>
+                        <div class="col-md-3"><a href="#" >prefrontal cortex</a></div>
+                        <div class="col-md-3"><a href="#" >hippocampus</a></div>
+                    </div> <br>
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#">Catecholamines</a></div>
+                        <div class="col-md-3"><a href="#">Indoleamines</a></div>
+                        <div class="col-md-3"><a href="#">Neuropeptide Y</a></div>
+                        <div class="col-md-3"><a href="#">Cortisol</a></div>
+                    </div> <br>
+                    <div class="row homepage">
+                            <div class="col-md-3"><a href="#" >Dehydroepiandrosterone</a></div>
+                            <div class="col-md-3"><a href="#" > </a></div>
+                            <div class="col-md-3"><a href="#" >pregnanolone</a></div>
+                            <div class="col-md-3"><a href="#" > Allopregnanolone </a></div>
+                        </div> <br>
+                    <p class="text-right"><a href="./neuro">See all...</a></p>
+                </div>
+            </div>
+    
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">Genes</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#">FKBP5</a></div>
+                        <div class="col-md-3"><a href="#">GCCR (NR3C1)</a></div>
+                        <div class="col-md-3"><a href="#">CRHR1</a></div>
+                        <div class="col-md-3"><a href="#">RGS2</a></div>
+                    </div> <br>
+                    <div class="row homepage">
+                        <div class="col-md-3"><a href="#">CNR1(CB1, CNR)</a></div>
+                        <div class="col-md-3"><a href="#">APOE</a></div>
+                        <div class="col-md-3"><a href="#">BDNF</a></div>
+                        <div class="col-md-3"><a href="#">NPY</a></div>
+                    </div> <br>
+                    <div class="row homepage">
+                            <div class="col-md-3"><a href="#">GABRA2</a></div>
+                            <div class="col-md-3"><a href="#">COMT</a></div>
+                            <div class="col-md-3"><a href="#">ADCYAP1R1</a></div>
+                            <div class="col-md-3"><a href="#">DTNBP1</a></div>
+                        </div> <br>
+                    <div class="row homepage">
+                            <div class="col-md-3"><a href="#">CRNA5</a></div>
+                            <div class="col-md-3"><a href="#">PRKCA</a></div>
+                            <div class="col-md-3"><a href="#">TPH1</a></div>
+                            <div class="col-md-3"><a href="#">TPH2</a></div>
+                        </div> 
+                    <p class="text-right"><a href="./genes">See all...</a></p>
+                </div>
+            </div>
+    
+            <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title">Metabolites</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row homepage">
+                            <div class="col-md-9"><a href="/genes/22">2,4-Diamino-6,7-dimethoxyquinazoline</a></div>
+                            <div class="col-md-3"><a href="/genes/111"></a></div>
+                        </div><br>
+                        <div class="row homepage">
+                            <div class="col-md-3"><a href="/genes/33">Sertraline</a></div>
+                            <div class="col-md-3"><a href="/genes/102"></a></div>
+                            <div class="col-md-3"><a href="/genes/95">Paroxetine</a></div>
+                            <div class="col-md-3"><a href="/genes/61"></a></div>
+                        </div>
+                        <p class="text-right"><a href="./metabolites">See all...</a></p>
+                    </div>
+                </div>
+    
+                <div class="panel">
+                        <div class="panel-heading">
+                            <div class="panel-title">miRNAs</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row homepage">
+                                <div class="col-md-3"><a href="/genes/22">miR-125a</a></div>
+                                <div class="col-md-3"><a href="/genes/103">miR-181c</a></div>
+                                <div class="col-md-3"><a href="/genes/41">miR-3130-5p</a></div>
+                                <div class="col-md-3"><a href="/genes/111">miR-193a-5p</a></div>
+                            </div> <br>
+                            <div class="row homepage">
+                                <div class="col-md-3"><a href="/genes/33">miR-15a</a></div>
+                                <div class="col-md-3"><a href="/genes/102"> </a></div>
+                                <div class="col-md-3"><a href="/genes/95"> </a></div>
+                                <div class="col-md-3"><a href="/genes/61"> </a></div>
+                            </div>
+                            <p class="text-right"><a href="./miRNAs">See all...</a></p>
+                        </div>
+                    </div>
+                        
+    
+        </div>       
+    
+    </div>
+
+{% endblock %}
+
+

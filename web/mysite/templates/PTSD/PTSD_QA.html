@@ -1,0 +1,146 @@
+{% extends "./base_sidebar.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+ 
+}
+</style>
+
+<h2>PTSD highly frequent questions</h2>
+
+<h3>PTSD General</h3>
+<button class="accordion">What is PTSD definition?</button>
+<div class="panel">
+  <p>Posttraumatic stress disorder (PTSD) is a mental disorder that can develop after a person is exposed to a traumatic event, such as sexual assault, warfare, traffic collisions, or other threats on a person's life.</p>
+</div>
+
+<button class="accordion">Traumas types</button>
+<div class="panel">
+  <p> wartime combat, motor vehicle accidents, or natural disasters </p>
+</div>
+<button class="accordion">PTSD symptoms</button>
+<div class="panel">
+  <p> intense feelings of fear, flashback memories, anxiety, exaggerated startle and cognitive impairments, hypervigilance, cognitive deficits and pathologically intense and intrusive memories of the trauma </p>
+</div>
+
+<button class="accordion">PTSD risk factors</button>
+<div class="panel">
+  <p> Genetic and Environmental and the interaction of genetic and epigenetic factors with environmental stressors. </p>
+</div>
+<button class="accordion">gender difference at PTSD</button>
+<div class="panel">
+  <p> twice as common in women as in men </p>
+</div>
+<button class="accordion">PTSD occurrence</button>
+<div class="panel">
+  <p> Difference exist in people in military, civilian, population and countries</p>
+</div>
+
+
+<h3>PTSD diagnosis</h3>
+<button class="accordion">DSM-V</button>
+<div class="panel">
+  <p> Diagnostic and Statistical Manual of Mental Disorders-V; a subset of criteria for PTSD diagnosis includes the following three conditions: PTSD can be triggered by an event that involves threatened death or a threat to one’s physical integrity; a person’s response to the event involves intense fear, helplessness, or horror; and in the aftermath of the trauma, the person feels as if the traumatic event were recurring, including a sense of re-living the experience. </p>
+</div>
+
+<button class="accordion">PTSD diagnostic criteria</button>
+<div class="panel">
+  <p> The field of PTSD is currently challenged by fluctuations in diagnostic criteria, have implications for epidemiological, biological, genetic and treatment studies.</p>
+</div>
+
+<h3>PTSD and biological systems</h3>
+<button class="accordion">PTSD affects biological systems</button>
+<div class="panel">
+  <p> neurobiology and neuroendocrinology of the persistent effects of trauma on brain and behavior </p>
+</div>
+<button class="accordion">aberrant biological profile involving several physiological systems</button>
+<div class="panel">
+  <p> hypothalamus–pituitary–adrenal (HPA) axis and the sympathetic nervous system; low baseline levels of cortisol being associated with the presence of enhanced negative feed- back of the HPA axis and an elevated density of glucocorticoid receptors </p>
+</div>
+<button class="accordion">Brain regions contribute to the behavioral and physiological manifestations of PTSD</button>
+<div class="panel">
+  <p> three; the amygdala, prefrontal cortex (PFC) and hippocampus; amygdala hyperactivity is related to abnormal fear responses and diminished extinction of conditioned fear. Reduced or impaired activation of the PFC is in response to the presentation of trauma-related, or fear-eliciting, stimuli. Hippocampal dysfunction explains cognitive deficits. It is reported with smaller hippocampal volume and impaired hippocampus-dependent learning and memory in PTSD patients.</p>
+</div>
+<button class="accordion">PTSD and cardiovascular disease</button>
+<div class="panel">
+  <p> People with PTSD also demonstrate greater baseline and stress-induced elevations of SNS activity, as measured by elevated baseline heart rate (HR), systolic blood pressure (BP), epinephrine, norepinephrine, diastolic BP (greater expression of anxiety-like behavior). This accentuated SNS activity in PTSD patients is the exaggerated responsiveness</p>
+</div>
+<button class="accordion">Epigenetic effect on PTSD</button>
+<div class="panel">
+  <p> Epigenetic alterations of the brain-derived neurotropic factor (BDNF) gene have been linked to brain functioning, memory, stress, and neuropsychiatric disorders. Traumatic stress occurring in adulthood can induce CNS gene methylation and, specifically, support the hypothesis that epigenetic marking of the BDNF gene may underlie hippocampal dysfunction in response to traumatic stress. Furthermore, this work provides support for the speculative notion that altered hippocampal BDNF DNA methylation is a cellular mechanism underlying the persistent cognitive deficits which are prominent features of the pathophysiology of PTSD.</p>
+</div>
+<button class="accordion">immune system effect on PTSD</button>
+<div class="panel">
+  <p> Multiple studies have shown immune activation in PTSD that is consistent with inflammation. Proinflammatory cytokines, endocannabinoids and neurosteroids are of interest as mediators of the stress response, particularly in the setting of low glucocorticoid signaling in PTSD. </p>
+</div>
+<button class="accordion">Candidate genes in PTSD </button>
+<div class="panel">
+  <p> neuropeptide Y (NPY), dehydroepiandroster- one (DHEA) and brain-derived neurotrophic factor (BDNF) </p>
+</div>
+<button class="accordion">GWAS studies in PTSD</button>
+<div class="panel">
+  <p> 5 GWAS published, they discovered associated genes: encoding nuclear receptor RORα (RORA)92, the gene encoding Tolloid-like protein 1 (TLL1), a novel RNA gene long intergenic non- coding RNA (lincRNA) AC068718.1, the gene encoding phosphoribosyl transferase domain-containing protein 1 (PRTFDC1)95 and the single-nucleotide poly- morphism rs717947 at chromosome 4p15.</p>
+</div>
+
+<h3>PTSD and medicine</h3>
+<button class="accordion">Challenges in PTSD research</button>
+<div class="panel">
+  <p>lack of longitudinal studies that would enable identification of dynamic changes over time </p>
+</div>
+
+<button class="accordion">Traumas types</button>
+<div class="panel">
+  <p> wartime combat, motor vehicle accidents, or natural disasters </p>
+</div>
+
+
+
+<script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+        </script>
+
+
+
+{% endblock %}
+
+
+

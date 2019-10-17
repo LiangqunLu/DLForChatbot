@@ -1,0 +1,69 @@
+{% extends "./base.html" %}
+
+{% block title %} {{ title|safe}} {% endblock %}
+
+
+{% block content %}
+
+<h2 align="center"> Dialogue Systems </h2>
+    <p> The widely applicable interactive conversational agents requires the development of intelligent dialogue systems. Natural language generation is critical in dialogue response generation and Recurrent Neural Networks (RNNs) including long short-term memory (LSTM) have been applied to tackle the task. The end-to-end sequence to sequence (seq2seq) models, in which Encoder encodes input information and Decoder generates output based on information encoding and language model, have demonstrated effectiveness in dialogue generation. Reinforcement learning implemented in seq2seq models rewards the conversation with informativity, coherence and ease of answering. Generative Adversarial Networks (GANs) that use a discriminative model to guide the training of the generative model have enjoyed considerable success in generating real-valued data. In this project, we built a LSTM seq2seq model for dialogue generation using pre-trained word embeddings. </p>
+<hr>
+
+<h2 align="center"> Seq2Seq Model Architecture</h2>
+<p> In the model architecture, we considered LSTM seq2seq models on character-based as well as word-based modeling at each dataset. In the word-based models, we chose trainable word embeddings and the pre-trained word embedding Glove, in both of which 100 vector length is set. </p>
+<p> We split the whole dataset to 80% training and 20% validation during the model training. We chose the optimizer ‘adam’ (learning rate = 0.001) with 'categorical_crossentropy' and used the metric 'acc' to optimize the model training. We also set regularization kernel_regularizer=regularizers.l2(0.01) and activity_regularizer=regularizers.l1(0.01)). The hidden layer neural size is 128 for char-based models while 256 for word-based models. For the sentence prediction, we applied inference model to select the optimal target. </p>
+<hr>
+
+<h2 align="center"> Datasets for Seq2Seq Model Training </h2>
+    
+<h5 > Datasets </h5>
+<p> In the experiments, we applied 2 common social dialogues from Movie and Reddit datasets in attempt to generate responses for social media. <a href = "https://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html">Cornell Movie-Dialogue Corpus</a> include 220,579 conversational exchanges between 10,292 pairs of 9,035 movie characters from 617 movies. In total, there are 304,713 utterances. The Reddit (https://www.reddit.com/)  shares social news and forum where the content can be socially curated, promoted or commented by the site members. In this study, we downloaded comments from 2018 october and in total there are 8, 396, 812 conversational pairs. </p>  
+    
+<h5> Pre-processing </h5>
+    
+<p> In the preparation of conversational pairs, we made sequential sentences in each dialogue from the movie characters or comments to the same original posts. In this case, the sentence in the middle can be output for one pair while input for another pair, which may create nonsense conversation pairs. Then for each dataset, we performed preprocessing before seq2seq models in the following steps. 
+
+1. Read Input and Target sentences
+2. Split sentences into words and return strings # add space before periods
+3. Select sentence length within [1, 5] 
+4. Lower all words
+5. Split sentences into words (tokenize) by whitespace
+6. Remove punctuation from all tokens
+7. Filter out stop words
+8. Remove non-English words from tokens
+9. Tokenize sentences and padding full length.
+
+In the results, we obtained 14654 pairs from movie data. In order to make similar number as movie dataset, we considered the first 400000 pairs from Reddit and obtained 12154 pairs for model training. 
+</p> 
+<hr>
+
+<h2 align="center"> Model Generation Examples </h2>
+<p> Use Movie char_Seq2Seq model and generate examples below.</p>
+<p> The input source is a sentence, the output is the generated sentence using the model and the real target is provided.</p>
+
+<form method="post" action="" >
+    {% csrf_token %}
+    	
+    {{ form }}
+
+    <input type="submit" value="Example">
+
+    </form>
+    
+
+<p> The source is :</p>
+<p style = "color:red;font-size:18px;">{{ input_txt|safe}}</p>
+<br>
+
+<p> The generated response is :</p>
+<p style = "color:blue;font-size:18px;">{{ output_txt|safe}} </p>
+<br>
+
+<p> The reference response is :</p>
+<p style = "color:green;font-size:18px;">{{ true_seq|safe}} </p>
+<br>
+
+{% endblock %}
+
+
+
